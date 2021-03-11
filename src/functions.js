@@ -15,3 +15,28 @@ const createBoard = (rows, columns) => {
         });
     });
 };
+
+const spreadMines = (board, minesAmount) => {
+  const rows = board.length;
+  const columns = board[0].length;
+  let minesPlanted = 0;
+
+  while (minesPlanted < minesAmount) {
+    //O segundo parâmetro é a base;
+    const rowSel = parseInt(Math.random() * rows, 10);
+    const colSel = parseInt(Math.random() * columns, 10);
+
+    if (!board[rowSel][colSel].mined) {
+      board[rowSel][colSel].mined = true;
+      minesPlanted++;
+    }
+  }
+};
+
+const createMinedBoard = (rows, columns, minesAmount) => {
+  const board = createBoard(rows, columns);
+  spreadMines(board, minesAmount);
+  return board;
+};
+
+export { createMinedBoard };
