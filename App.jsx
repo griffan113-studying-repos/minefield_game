@@ -48,11 +48,31 @@ class App extends Component {
 
     if (lost) {
       showMines(board);
-      Alert.alert("Perdeu", 'Aperte "Reiniciar" para iniciar um novo jogo. ');
+      Alert.alert("Perdeu", "Aperte OK para iniciar um novo jogo.", [
+        {
+          text: "Cancel",
+          cancelable: true,
+        },
+        {
+          text: "Ok",
+          onPress: () => this.setState(this.createState()),
+          style: "ok",
+        },
+      ]);
     }
 
     if (won) {
-      Alert.alert("Ganhou", "Parabéns, você ganhou o jogo!");
+      Alert.alert("Ganhou", "Aperte OK para iniciar um novo jogo.", [
+        {
+          text: "Cancel",
+          cancelable: true,
+        },
+        {
+          text: "Ok",
+          onPress: () => this.setState(this.createState()),
+          style: "ok",
+        },
+      ]);
     }
 
     this.setState({ board, lost, won });
@@ -64,7 +84,17 @@ class App extends Component {
     const won = wonGame(board);
 
     if (won) {
-      Alert.alert("Ganhou", "Parabéns, você ganhou o jogo!");
+      Alert.alert("Ganhou", "Aperte OK para iniciar um novo jogo.", [
+        {
+          text: "Cancel",
+          cancelable: true,
+        },
+        {
+          text: "Ok",
+          onPress: () => this.setState(this.createState()),
+          style: "ok",
+        },
+      ]);
     }
 
     this.setState({ board, won });

@@ -12,6 +12,7 @@ export const headerStyles = StyleSheet.create({
   },
   flagContainer: {
     flexDirection: "row",
+    margin: 30,
   },
   flagButton: {
     marginTop: 10,
@@ -41,4 +42,7 @@ export const headerStyles = StyleSheet.create({
     color: "#DDD",
     fontWeight: "bold",
   },
+  hamburguer: {
+    flex: 1,
+  }
 });

@@ -1,5 +1,6 @@
 import React from "react";
 import { View, StyleSheet, Text, TouchableOpacity, Modal } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 
 export default ({ onLevelSelected, isVisible, onCancel }) => {
   return (
@@ -30,6 +31,17 @@ export default ({ onLevelSelected, isVisible, onCancel }) => {
           >
             <Text style={styles.buttonLabel}>Difícil</Text>
           </TouchableOpacity>
+          <View style={styles.dev}>
+            <Text>Desenvolvido por Eliel</Text>
+            <Text>
+              <AntDesign
+                name="github"
+                size={15}
+                color="black"
+              />
+              griffan113
+            </Text>
+          </View>
         </View>
       </View>
     </Modal>
@@ -64,11 +76,21 @@ const styles = StyleSheet.create({
   },
   bgEasy: {
     backgroundColor: "#49b65d",
+    borderRadius: 2,
   },
   bgNormal: {
     backgroundColor: "#2765F7",
+    borderRadius: 2,
   },
   bgHard: {
     backgroundColor: "#FF2337",
+    borderRadius: 2,
+  },
+  dev: {
+    margin: 30,
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    fontSize: 12,
   },
 });
